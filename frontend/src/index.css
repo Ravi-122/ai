@@ -1,0 +1,230 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* =========================
+   APP WRAPPER
+========================= */
+
+.app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   CHAT CONTAINER
+========================= */
+
+.chat-container {
+  width: 95%;
+  max-width: 750px;
+  height: 90vh;
+  background: rgba(35, 32, 32, 0.08);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  padding: 18px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.new-chat-btn {
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.new-chat-btn:hover {
+  background: #2563eb;
+  transform: scale(1.08);
+}
+
+/* =========================
+   MESSAGE AREA
+========================= */
+
+.messages-container {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+
+.messages-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+/* =========================
+   CHAT BUBBLES
+========================= */
+
+.message {
+  max-width: 75%;
+  padding: 14px 18px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+  animation: fadeIn 0.3s ease-in-out;
+  word-wrap: break-word;
+}
+
+/* User Bubble */
+
+.message.user {
+  align-self: flex-end;
+  background: #3b82f6;
+  color: white;
+  border-bottom-right-radius: 6px;
+}
+
+/* Assistant Bubble */
+
+.message.assistant {
+  align-self: flex-start;
+  background: rgba(235, 229, 229, 0.15);
+  color: white;
+  border-bottom-left-radius: 6px;
+}
+
+/* Timestamp */
+
+.timestamp {
+  font-size: 11px;
+  margin-top: 6px;
+  opacity: 0.6;
+  text-align: right;
+}
+
+/* =========================
+   INPUT AREA (FLOAT STYLE)
+========================= */
+
+.input-container {
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.input-container input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  background: rgba(243, 240, 240, 0.15);
+  color: white;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.input-container input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.input-container input:focus {
+  background: rgba(249, 246, 246, 0.788);
+}
+
+/* Send Button */
+
+.input-container button {
+  padding: 0 22px;
+  border-radius: 16px;
+  border: none;
+  background: #22c55e;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.input-container button:hover {
+  background: #16a34a;
+  transform: translateY(-3px);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .chat-container {
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .message {
+    max-width: 90%;
+  }
+
+  .header {
+    font-size: 16px;
+  }
+}
