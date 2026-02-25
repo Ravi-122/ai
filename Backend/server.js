@@ -20,7 +20,9 @@ app.use(express.json());
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
-  message: { error: "Too many requests. Try again later." }
+  standardHeaders: true,
+  legacyHeaders: false,
+  trustProxy: true, 
 });
 
 app.use(limiter);
