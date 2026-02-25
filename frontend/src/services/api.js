@@ -16,7 +16,7 @@ export const sendMessage = async (sessionId, message) => {
 
 
 export const fetchConversation = async (sessionId) => {
-  const res = await fetch(`http://localhost:5000/api/conversation/${sessionId}`);
+  const res = await fetch(`https://ai-345h.onrender.com/api/conversation/${sessionId}`);
   const data = await res.json();
   return data.conversation; 
 };
