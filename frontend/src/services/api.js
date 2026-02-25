@@ -35,3 +35,4 @@ export const fetchConversation = async (sessionId) => {
   const res = await fetch(`${BASE_URL}/api/conversations/${sessionId}`);
   return res.json();
 };
+
