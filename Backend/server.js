@@ -7,7 +7,7 @@ const chatRoutes = require("./routes/chat");
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:3000"
+  origin: "https://ai-git-main-ravis-projects-785d6a06.vercel.app/"
 }));
 
 app.use(express.json());
