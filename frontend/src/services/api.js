@@ -5,7 +5,7 @@
 export const sendMessage = async (sessionId, message) => {
   localStorage.setItem("sessionId", sessionId);
   localStorage.setItem("message", message);
-  const res = await fetch("https://ai-345h.onrender.com/", {
+  const res = await fetch("https://ai-345h.onrender.com/api/chat", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ sessionId, message })
